@@ -1,3 +1,8 @@
 #!/usr/bin/env ruby
 
+libx = File.join(File.expand_path('..', File.dirname(__FILE__)), 'lib')
+$LOAD_PATH.unshift(libx) unless $LOAD_PATH.include?(libx)
+
 require "market_place"
+
+MarketPlace::CLI.start(ARGV)
