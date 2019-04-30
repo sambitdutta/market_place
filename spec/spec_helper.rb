@@ -1,5 +1,9 @@
+# $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
+# $LOAD_PATH.unshift(File.dirname(__FILE__))
+
 require "bundler/setup"
 require "market_place"
+Dir['./spec/shared/*.rb'].sort.each { |f| require f }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
